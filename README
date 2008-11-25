@@ -1,0 +1,281 @@
+fltk2
+------------------------------------------
+FLTK is a cross-platform C++ GUI toolkit for UNIX/Linux (X11), Microsoft 
+Windows, and MacOS X. FLTK provides modern GUI functionality without the 
+bloat and supports 3D graphics via OpenGL and its built-in GLUT 
+emulation.
+
+FLTK is designed to be small and modular enough to be statically linked, 
+but works fine as a shared library. FLTK also includes an excellent UI 
+builder called FLUID that can be used to create applications in minutes.
+
+Runtime requirements:
+  cygwin-1.5.25-15
+  libGL1-7.2-2
+  libjpeg62-6b-12
+  libpng12-1.2.33-1
+  libX11_6-1.1.5-1
+  libXext6-1.0.4-1
+  libXi6-1.1.3-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.63-1
+  binutils-20080624-2
+  cygport-0.4.2-1
+  gawk-3.1.6-1
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  make-3.81-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://www.fltk.org/
+
+Canonical download:
+  http://ftp.easysw.com/pub/fltk/snapshots/
+
+-------------------------------------------
+
+Build instructions:
+  unpack fltk2-2.0.x.6525-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./fltk2-2.0.x.6525-X.cygport all
+
+This will create:
+  /usr/src/fltk2-2.0.x.6525-X-src.tar.bz2
+  /usr/src/fltk2-2.0.x.6525-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(fluid2)
+  /usr/bin/fluid2.exe
+  /usr/share/man/man1/fluid.1.gz
+
+(libfltk2.0)
+  /usr/bin/cygfltk2-2.0.dll
+  /usr/bin/cygfltk2_gl-2.0.dll
+  /usr/bin/cygfltk2_glut-2.0.dll
+  /usr/bin/cygfltk2_images-2.0.dll
+  /usr/share/doc/fltk2-2.0.x.6525/COPYING
+  /usr/share/doc/fltk2-2.0.x.6525/CREDITS
+  /usr/share/doc/fltk2-2.0.x.6525/Changes
+  /usr/share/doc/fltk2-2.0.x.6525/README
+  /usr/share/doc/fltk2-2.0.x.6525/README_fltk1_to_fltk2.txt
+  /usr/share/doc/fltk2-2.0.x.6525/TODO
+
+(libfltk2-devel)
+  /usr/bin/fltk2-config
+  /usr/include/fltk/Adjuster.h
+  /usr/include/fltk/AlignGroup.h
+  /usr/include/fltk/AnsiWidget.h
+  /usr/include/fltk/BarGroup.h
+  /usr/include/fltk/Box.h
+  /usr/include/fltk/Browser.h
+  /usr/include/fltk/Button.h
+  /usr/include/fltk/CheckButton.h
+  /usr/include/fltk/Choice.h
+  /usr/include/fltk/Clock.h
+  /usr/include/fltk/Color.h
+  /usr/include/fltk/ColorChooser.h
+  /usr/include/fltk/ComboBox.h
+  /usr/include/fltk/Cursor.h
+  /usr/include/fltk/CycleButton.h
+  /usr/include/fltk/Dial.h
+  /usr/include/fltk/Divider.h
+  /usr/include/fltk/DoubleBufferWindow.h
+  /usr/include/fltk/FL_API.h
+  /usr/include/fltk/FL_VERSION.h
+  /usr/include/fltk/FileBrowser.h
+  /usr/include/fltk/FileChooser.h
+  /usr/include/fltk/FileIcon.h
+  /usr/include/fltk/FileInput.h
+  /usr/include/fltk/FillDial.h
+  /usr/include/fltk/FillSlider.h
+  /usr/include/fltk/Flags.h
+  /usr/include/fltk/FloatInput.h
+  /usr/include/fltk/Font.h
+  /usr/include/fltk/GlWindow.h
+  /usr/include/fltk/Group.h
+  /usr/include/fltk/HelpDialog.h
+  /usr/include/fltk/HelpView.h
+  /usr/include/fltk/HighlightButton.h
+  /usr/include/fltk/Image.h
+  /usr/include/fltk/Input.h
+  /usr/include/fltk/InputBrowser.h
+  /usr/include/fltk/IntInput.h
+  /usr/include/fltk/InvisibleBox.h
+  /usr/include/fltk/Item.h
+  /usr/include/fltk/ItemGroup.h
+  /usr/include/fltk/LabelType.h
+  /usr/include/fltk/LightButton.h
+  /usr/include/fltk/LineDial.h
+  /usr/include/fltk/Menu.h
+  /usr/include/fltk/MenuBar.h
+  /usr/include/fltk/MenuBuild.h
+  /usr/include/fltk/MenuWindow.h
+  /usr/include/fltk/Monitor.h
+  /usr/include/fltk/MultiBrowser.h
+  /usr/include/fltk/MultiImage.h
+  /usr/include/fltk/MultiLineInput.h
+  /usr/include/fltk/MultiLineOutput.h
+  /usr/include/fltk/NumericInput.h
+  /usr/include/fltk/Output.h
+  /usr/include/fltk/PackedGroup.h
+  /usr/include/fltk/PixelType.h
+  /usr/include/fltk/PopupMenu.h
+  /usr/include/fltk/Preferences.h
+  /usr/include/fltk/ProgressBar.h
+  /usr/include/fltk/RadioButton.h
+  /usr/include/fltk/RadioItem.h
+  /usr/include/fltk/RadioLightButton.h
+  /usr/include/fltk/Rectangle.h
+  /usr/include/fltk/RepeatButton.h
+  /usr/include/fltk/ReturnButton.h
+  /usr/include/fltk/ScrollGroup.h
+  /usr/include/fltk/Scrollbar.h
+  /usr/include/fltk/SecretInput.h
+  /usr/include/fltk/ShapedWindow.h
+  /usr/include/fltk/SharedImage.h
+  /usr/include/fltk/Slider.h
+  /usr/include/fltk/StatusBarGroup.h
+  /usr/include/fltk/StringList.h
+  /usr/include/fltk/Style.h
+  /usr/include/fltk/StyleSet.h
+  /usr/include/fltk/Symbol.h
+  /usr/include/fltk/SystemMenuBar.h
+  /usr/include/fltk/TabGroup.h
+  /usr/include/fltk/TextBuffer.h
+  /usr/include/fltk/TextDisplay.h
+  /usr/include/fltk/TextEditor.h
+  /usr/include/fltk/Threads.h
+  /usr/include/fltk/ThumbWheel.h
+  /usr/include/fltk/TiledGroup.h
+  /usr/include/fltk/TiledImage.h
+  /usr/include/fltk/ToggleButton.h
+  /usr/include/fltk/ToggleItem.h
+  /usr/include/fltk/Tooltip.h
+  /usr/include/fltk/Valuator.h
+  /usr/include/fltk/ValueInput.h
+  /usr/include/fltk/ValueOutput.h
+  /usr/include/fltk/ValueSlider.h
+  /usr/include/fltk/Widget.h
+  /usr/include/fltk/WidgetAssociation.h
+  /usr/include/fltk/Window.h
+  /usr/include/fltk/WizardGroup.h
+  /usr/include/fltk/WordwrapInput.h
+  /usr/include/fltk/WordwrapOutput.h
+  /usr/include/fltk/ask.h
+  /usr/include/fltk/compat/FL/Enumerations.H
+  /usr/include/fltk/compat/FL/Fl.H
+  /usr/include/fltk/compat/FL/Fl_Adjuster.H
+  /usr/include/fltk/compat/FL/Fl_Box.H
+  /usr/include/fltk/compat/FL/Fl_Browser.H
+  /usr/include/fltk/compat/FL/Fl_Button.H
+  /usr/include/fltk/compat/FL/Fl_Chart.H
+  /usr/include/fltk/compat/FL/Fl_Check_Button.H
+  /usr/include/fltk/compat/FL/Fl_Choice.H
+  /usr/include/fltk/compat/FL/Fl_Clock.H
+  /usr/include/fltk/compat/FL/Fl_Color_Chooser.H
+  /usr/include/fltk/compat/FL/Fl_Counter.H
+  /usr/include/fltk/compat/FL/Fl_Dial.H
+  /usr/include/fltk/compat/FL/Fl_Double_Window.H
+  /usr/include/fltk/compat/FL/Fl_File_Chooser.H
+  /usr/include/fltk/compat/FL/Fl_Gl_Window.H
+  /usr/include/fltk/compat/FL/Fl_Group.H
+  /usr/include/fltk/compat/FL/Fl_Hold_Browser.H
+  /usr/include/fltk/compat/FL/Fl_Hor_Slider.H
+  /usr/include/fltk/compat/FL/Fl_Hor_Value_Slider.H
+  /usr/include/fltk/compat/FL/Fl_Input.H
+  /usr/include/fltk/compat/FL/Fl_Int_Input.H
+  /usr/include/fltk/compat/FL/Fl_Light_Button.H
+  /usr/include/fltk/compat/FL/Fl_Menu_.H
+  /usr/include/fltk/compat/FL/Fl_Menu_Bar.H
+  /usr/include/fltk/compat/FL/Fl_Menu_Button.H
+  /usr/include/fltk/compat/FL/Fl_Menu_Item.H
+  /usr/include/fltk/compat/FL/Fl_Output.H
+  /usr/include/fltk/compat/FL/Fl_Overlay_Window.H
+  /usr/include/fltk/compat/FL/Fl_Pack.H
+  /usr/include/fltk/compat/FL/Fl_Pixmap.H
+  /usr/include/fltk/compat/FL/Fl_Return_Button.H
+  /usr/include/fltk/compat/FL/Fl_Roller.H
+  /usr/include/fltk/compat/FL/Fl_Scroll.H
+  /usr/include/fltk/compat/FL/Fl_Scrollbar.H
+  /usr/include/fltk/compat/FL/Fl_Select_Browser.H
+  /usr/include/fltk/compat/FL/Fl_Shared_Image.H
+  /usr/include/fltk/compat/FL/Fl_Single_Window.H
+  /usr/include/fltk/compat/FL/Fl_Slider.H
+  /usr/include/fltk/compat/FL/Fl_Tabs.H
+  /usr/include/fltk/compat/FL/Fl_Text_Buffer.H
+  /usr/include/fltk/compat/FL/Fl_Text_Editor.H
+  /usr/include/fltk/compat/FL/Fl_Tile.H
+  /usr/include/fltk/compat/FL/Fl_Toggle_Button.H
+  /usr/include/fltk/compat/FL/Fl_Toggle_Light_Button.H
+  /usr/include/fltk/compat/FL/Fl_Valuator.H
+  /usr/include/fltk/compat/FL/Fl_Value_Input.H
+  /usr/include/fltk/compat/FL/Fl_Value_Output.H
+  /usr/include/fltk/compat/FL/Fl_Value_Slider.H
+  /usr/include/fltk/compat/FL/Fl_Widget.H
+  /usr/include/fltk/compat/FL/Fl_Window.H
+  /usr/include/fltk/compat/FL/filename.H
+  /usr/include/fltk/compat/FL/fl_ask.H
+  /usr/include/fltk/compat/FL/fl_draw.H
+  /usr/include/fltk/compat/FL/fl_message.H
+  /usr/include/fltk/compat/FL/forms.H
+  /usr/include/fltk/compat/FL/gl.h
+  /usr/include/fltk/compat/FL/glut.H
+  /usr/include/fltk/compat/FL/math.h
+  /usr/include/fltk/compat/FL/menubar.h
+  /usr/include/fltk/compat/FL/x.H
+  /usr/include/fltk/damage.h
+  /usr/include/fltk/dirent.h
+  /usr/include/fltk/draw.h
+  /usr/include/fltk/error.h
+  /usr/include/fltk/events.h
+  /usr/include/fltk/file_chooser.h
+  /usr/include/fltk/filename.h
+  /usr/include/fltk/fltk_cairo.h
+  /usr/include/fltk/forms.h
+  /usr/include/fltk/gl.h
+  /usr/include/fltk/gl2opengl.h
+  /usr/include/fltk/glut.h
+  /usr/include/fltk/layout.h
+  /usr/include/fltk/load_plugin.h
+  /usr/include/fltk/math.h
+  /usr/include/fltk/osx.h
+  /usr/include/fltk/pnmImage.h
+  /usr/include/fltk/rgbImage.h
+  /usr/include/fltk/run.h
+  /usr/include/fltk/show_colormap.h
+  /usr/include/fltk/string.h
+  /usr/include/fltk/utf.h
+  /usr/include/fltk/visual.h
+  /usr/include/fltk/win32.h
+  /usr/include/fltk/x.h
+  /usr/include/fltk/x11.h
+  /usr/include/fltk/xbmImage.h
+  /usr/include/fltk/xpmImage.h
+  /usr/lib/libfltk2.a
+  /usr/lib/libfltk2.dll.a
+  /usr/lib/libfltk2_gl.a
+  /usr/lib/libfltk2_gl.dll.a
+  /usr/lib/libfltk2_glut.a
+  /usr/lib/libfltk2_glut.dll.a
+  /usr/lib/libfltk2_images.a
+  /usr/lib/libfltk2_images.dll.a
+  /usr/share/man/man1/fltk2-config.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.0.x.6525-1 -----
+Initial release of 2.0 branch for Cygwin.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

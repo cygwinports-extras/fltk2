@@ -1,0 +1,30 @@
+--- origsrc/fltk-2.0.x-r6525/OpenGL/Fl_Gl_Choice.cxx	2008-11-10 13:35:46.000000000 -0600
++++ src/fltk-2.0.x-r6525/OpenGL/Fl_Gl_Choice.cxx	2008-11-24 23:07:27.398576300 -0600
+@@ -29,6 +29,7 @@
+ #include "GlChoice.h"
+ #include <fltk/visual.h>
+ #include <stdlib.h>
++#include <stdio.h>
+ 
+ using namespace fltk;
+ 
+--- origsrc/fltk-2.0.x-r6525/src/Image.cxx	2008-09-16 23:26:52.000000000 -0500
++++ src/fltk-2.0.x-r6525/src/Image.cxx	2008-11-24 23:05:55.852287200 -0600
+@@ -20,6 +20,7 @@
+ // Please report all bugs and problems to "fltk-bugs@fltk.org".
+ 
+ #include <config.h>
++#include <string.h>
+ #include <fltk/Image.h>
+ #include <fltk/Widget.h>
+ #include <fltk/events.h>
+--- origsrc/fltk-2.0.x-r6525/src/setcolor.cxx	2008-09-15 01:21:01.000000000 -0500
++++ src/fltk-2.0.x-r6525/src/setcolor.cxx	2008-11-24 23:06:27.492709700 -0600
+@@ -21,6 +21,7 @@
+ // Please report all bugs and problems to "fltk-bugs@fltk.org".
+ //
+ 
++#include <string.h>
+ #include <fltk/Color.h>
+ #include <fltk/draw.h>
+ #include <config.h>

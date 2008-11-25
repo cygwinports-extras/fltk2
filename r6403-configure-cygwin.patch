@@ -1,0 +1,108 @@
+--- origsrc/fltk-2.0.x-r6403/configure.in	2008-08-04 17:53:30.000000000 -0500
++++ src/fltk-2.0.x-r6403/configure.in	2008-10-18 22:41:51.726531900 -0500
+@@ -76,10 +76,6 @@
+ 	    CFLAGS="$CFLAGS -mno-cygwin"
+ 	    CPPFLAGS="$CPPFLAGS -mno-cygwin"
+ 	    CXXFLAGS="$CXXFLAGS -mno-cygwin"
+-        else
+-	    CFLAGS="$CFLAGS -D_WIN32"
+-	    CPPFLAGS="$CPPFLAGS -D_WIN32"
+-	    CXXFLAGS="$CXXFLAGS -D_WIN32"
+ 	fi
+ 	;;
+ esac
+@@ -197,7 +193,13 @@
+             SHAREDSUFFIX="_s"
+             ;;
+         CYGWIN*)
+-            AC_MSG_WARN(Shared libraries are not supported under CygWin.)
++			DSOPREFIX="cyg"
++			DSOSUFFIX="-$FL_API_VERSION.dll"
++			DSOSYMLINK=""
++
++			PICFLAG=0
++			SHAREDSUFFIX=""
++			DSOCOMMAND="\$(CXX) -Wl,--out-implib,../lib/\$(LIBNAME:.a=.dll.a) -shared -DFL_SHARED -DFL_LIBRARY -DFL_IMAGES_LIBRARY -DFL_GLUT_LIBRARY -DFL_FORMS_LIBRARY -DFL_GL_LIBRARY $DEBUGFLAG -o"
+ 	    ;;
+ 		MINGW*)
+ 			DSOPREFIX=""
+@@ -356,7 +358,7 @@
+ 	    ;;
+     esac],[
+     case $uname in
+-        CYGWIN* | MINGW*)
++        MINGW*)
+ 	    AC_DEFINE(HAVE_SNPRINTF)
+ 	    ;;
+ 	*)
+@@ -382,7 +384,7 @@
+ 	    ;;
+     esac],[
+     case $uname in
+-        CYGWIN* | MINGW*)
++        MINGW*)
+ 	    AC_DEFINE(HAVE_VSNPRINTF)
+ 	    ;;
+ 	*)
+@@ -391,7 +393,7 @@
+ 
+ AC_CHECK_FUNC(strcasecmp,AC_DEFINE(HAVE_STRCASECMP),[
+     case $uname in
+-        CYGWIN* | MINGW*)
++        MINGW*)
+             AC_DEFINE(HAVE_STRCASECMP)
+ 	    ;;
+ 	*)
+@@ -400,7 +402,7 @@
+ AC_CHECK_FUNC(strdup,AC_DEFINE(HAVE_STRDUP))
+ AC_CHECK_FUNC(strncasecmp,AC_DEFINE(HAVE_STRNCASECMP),[
+     case $uname in
+-        CYGWIN* | MINGW*)
++        MINGW*)
+             AC_DEFINE(HAVE_STRNCASECMP)
+ 	    ;;
+ 	*)
+@@ -414,7 +416,6 @@
+ 
+ dnl Check for image libraries...
+ SAVELIBS="$LIBS"
+-IMAGELIBS="-lfltk2_images"
+ 
+ AC_ARG_ENABLE(jpeg, [  --enable-jpeg           turn on JPEG support: auto,no,local (default=auto)])
+ if test x$enable_jpeg != xno; then
+@@ -523,7 +524,7 @@
+ THREADS=
+ 
+ case $uname in
+-    CYGWIN* | MINGW*)
++    MINGW*)
+ 	dnl Cygwin environment...
+ 	CFLAGS="-mwindows -DWIN32 $CFLAGS"
+ 	CXXFLAGS="-mwindows -DWIN32 $CXXFLAGS"
+@@ -728,7 +729,7 @@
+         AC_CHECK_LIB(X11, Xutf8LookupString,,[
+             AC_CHECK_HEADERS([iconv.h],[
+                 AC_DEFINE(_XOPEN_SOURCE, 1)
+-                AC_CHECK_LIB(iconv, iconv,[
++                AC_CHECK_LIB(iconv, libiconv,[
+                     AC_DEFINE(HAVE_ICONV) LIBS="-liconv $LIBS"],[
+                     AC_CHECK_FUNC(iconv, AC_DEFINE(HAVE_ICONV))
+                 ])
+@@ -827,7 +828,7 @@
+             # This is gcc 3.x, and it knows of libsupc++, so we need it
+ 	case "$uname" in
+ 	    # do not add for Darwin as it is already linked with it
+-	    Darwin*)
++	    Darwin*|CYGWIN*)
+ 	    ;;
+ 	    *)
+             LIBS="$LIBS -lsupc++"
+@@ -836,7 +837,7 @@
+ 	esac
+     esac
+ 
+-    if test x$uname != xDarwin; then
++    if test x$uname != xDarwin && test x$uname != xCYGWIN; then
+         CXX="$CC"
+     fi
+ 

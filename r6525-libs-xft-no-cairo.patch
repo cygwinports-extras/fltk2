@@ -1,0 +1,32 @@
+This patch is ONLY required if building FLTK2 with Xft support and
+without cairo support.
+
+--- origsrc/fltk-2.0.x-r6525/configure.in	2008-11-24 22:54:48.748766800 -0600
++++ src/fltk-2.0.x-r6525/configure.in	2008-11-24 23:30:26.270681800 -0600
+@@ -609,7 +609,7 @@
+ 	    AC_MSG_WARN(Ignoring libraries \"$X_PRE_LIBS\" requested by configure.)
+ 	fi
+ 
+-	LIBS="$LIBS -lXext $X_EXTRA_LIBS"
++	LIBS="$LIBS -lXrender -lXext $X_EXTRA_LIBS"
+ 	CFLAGS="$CFLAGS$X_CFLAGS"
+ 	CXXFLAGS="$CXXFLAGS$X_CFLAGS"
+ 	LDFLAGS="$X_LIBS $LDFLAGS"
+@@ -626,7 +626,7 @@
+ 	    AC_CHECK_HEADER(GL/gl.h,[
+ 		AC_CHECK_LIB(GL, glXMakeCurrent,[
+ 		    AC_DEFINE(HAVE_GL)
+-		    GLLIB="-lGL"],[
++		    GLLIB="-lGL -lfreetype"],[
+ 		    AC_CHECK_LIB(MesaGL,glXMakeCurrent,[
+ 		        AC_DEFINE(HAVE_GL)
+ 			GLLIB=" -lMesaGL"],,
+@@ -682,7 +682,7 @@
+ 	      X11/Xft/Xft.h,
+ 	      AC_CHECK_LIB(Xft, XftDrawCreate,
+ 	      AC_DEFINE(USE_XFT)
+-	      LIBS="-lXft $LIBS")
++	      LIBS="-lXft -lfontconfig $LIBS")
+ 	    )
+ 	  fi
+ 	fi

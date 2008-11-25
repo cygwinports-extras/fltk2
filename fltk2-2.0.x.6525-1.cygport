@@ -1,0 +1,56 @@
+DESCRIPTION="Fast Light Toolkit version 2 (X11 build)"
+HOMEPAGE="http://www.fltk.org/"
+SRC_URI="http://ftp.easysw.com/pub/fltk/snapshots/fltk-2.0.x-r${PVP[3]}.tar.bz2"
+PATCH_URI="
+	r6403-configure-cygwin.patch
+	r6525-no-undefined.patch
+	r6525-std-includes.patch
+"
+#	r6525-libs-xft-no-cairo.patch
+
+SRC_DIR="fltk-2.0.x-r${PVP[3]}"
+
+PKG_NAMES="${PN} fluid2 libfltk2.0 libfltk2-devel"
+fluid2_CONTENTS="usr/bin/fluid2.exe usr/share/man/man1/fluid2.*"
+libfltk2_0_CONTENTS="usr/bin/*-2.0.dll usr/share/doc/"
+libfltk2_devel_CONTENTS="usr/bin/*-config usr/include/ usr/lib/
+                         usr/share/man/man1/*-config.*"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	autoconf --force || error "autoconf failed"
+
+	LDFLAGS+=" -Wl,--enable-auto-import"
+
+	# cairo support is buggy, and must be disabled for Dillo2
+	# Xft and unicode causes almost all characters to be rendered as boxes
+	cygconf \
+		--disable-cairo \
+		--enable-cygwin \
+		--enable-gl \
+		--enable-shared \
+		--enable-threads \
+		--disable-xft \
+		--enable-xshm \
+		--disable-xinerama
+
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	dobin ${PN}-config lib/*.dll fluid/fluid2.exe
+	dolib lib/*.a
+
+	insinto /usr/include/fltk
+	doins fltk/*.h
+
+	insinto /usr/include/fltk/compat/FL
+	doins fltk/compat/FL/*.{H,h}
+	
+	newman documentation/fluid.man fluid2.1
+	newman documentation/fltk2-config.man fltk2-config.1
+#	newman documentation/fltk.man fltk2.3
+}
+DOCS="README_fltk1_to_fltk2.txt"
