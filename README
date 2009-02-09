@@ -13,16 +13,17 @@ Runtime requirements:
   cygwin-1.5.25-15
   libGL1-7.2-2
   libjpeg62-6b-12
-  libpng12-1.2.33-1
+  libpng12-1.2.34-1
   libX11_6-1.1.5-1
   libXext6-1.0.4-1
   libXi6-1.1.3-2
+  libXinerama1-1.0.3-1
 
 Build requirements:
 (besides corresponding -devel packages)
   autoconf2.5-2.63-1
   binutils-20080624-2
-  cygport-0.4.2-1
+  cygport-0.4.3-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
@@ -272,6 +273,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 2.0.x.6525-2 -----
+Enabled Xinerama support.
 
 ----- version 2.0.x.6525-1 -----
 Initial release of 2.0 branch for Cygwin.

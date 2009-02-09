@@ -32,8 +32,8 @@ src_compile() {
 		--enable-shared \
 		--enable-threads \
 		--disable-xft \
-		--enable-xshm \
-		--disable-xinerama
+		--enable-xinerama \
+		--enable-xshm
 
 	cygmake
 }
@@ -48,7 +48,7 @@ src_install() {
 
 	insinto /usr/include/fltk/compat/FL
 	doins fltk/compat/FL/*.{H,h}
-	
+
 	newman documentation/fluid.man fluid2.1
 	newman documentation/fltk2-config.man fltk2-config.1
 #	newman documentation/fltk.man fltk2.3
