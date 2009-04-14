@@ -5,8 +5,8 @@ PATCH_URI="
 	r6403-configure-cygwin.patch
 	r6525-no-undefined.patch
 	r6525-std-includes.patch
+	r6525-libs-xft-no-cairo.patch
 "
-#	r6525-libs-xft-no-cairo.patch
 
 SRC_DIR="fltk-2.0.x-r${PVP[3]}"
 
@@ -20,8 +20,6 @@ src_compile() {
 	lndirs
 	cd ${B}
 	autoconf --force || error "autoconf failed"
-
-	LDFLAGS+=" -Wl,--enable-auto-import"
 
 	# cairo support is buggy, and must be disabled for Dillo2
 	# Xft and unicode causes almost all characters to be rendered as boxes
