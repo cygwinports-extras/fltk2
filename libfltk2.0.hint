@@ -1,5 +1,5 @@
 category: X11
-requires: libgcc1 libGL1 libjpeg62 libpng12 libstdc++6 libX11_6 libXext6 libXi6 libXinerama1
+requires: libgcc1 libGL1 libjpeg7 libpng12 libstdc++6 libX11_6 libXext6 libXi6 libXinerama1
 external-source: fltk2
 sdesc: "Cross-platform C++ GUI toolkit (runtime)"
 ldesc: "FLTK is a cross-platform C++ GUI toolkit for UNIX/Linux (X11), 
