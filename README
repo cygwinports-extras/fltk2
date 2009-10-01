@@ -42,21 +42,24 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack fltk2-2.0.x.6858-X-src.tar.bz2
+  unpack fltk2-2.0.x.6879-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./fltk2-2.0.x.6858-X.cygport all
+  cygport ./fltk2-2.0.x.6879-X.cygport all
 
 This will create:
-  /usr/src/fltk2-2.0.x.6858-X-src.tar.bz2
-  /usr/src/fluid2-2.0.x.6858-X.tar.bz2
-  /usr/src/libfltk2-devel-2.0.x.6858-X.tar.bz2
-  /usr/src/libfltk2.0-2.0.x.6858-X.tar.bz2
+  /usr/src/fltk2-2.0.x.6879-X-src.tar.bz2
+  /usr/src/fluid2-2.0.x.6879-X.tar.bz2
+  /usr/src/libfltk2-devel-2.0.x.6879-X.tar.bz2
+  /usr/src/libfltk2.0-2.0.x.6879-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 2.0.x.6879-1 -----
+Version bump.
 
 ----- version 2.0.x.6858-1 -----
 Version bump.
